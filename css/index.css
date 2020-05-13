@@ -40,6 +40,21 @@ h1,h2,h3,h4,h5,h6{
     top:0;
     z-index: 9;
 }
+.header-input{
+    display: none;
+}
+.phoneMenu-label{
+    position: absolute;
+    top:13px;
+    left:16px;
+    display: none;
+}
+.phoneMenu{
+    position: absolute;
+    top:13px;
+    left:16px;
+    display: none;
+}
 .logo{
     padding: 10px;
 }
@@ -65,6 +80,9 @@ h1,h2,h3,h4,h5,h6{
     margin-left: 64px;
 }
 @media screen and (max-width:992px){
+    body{
+        padding-top: 50px;
+    }
     .header{
         padding-right: 6.25%;
         padding-left: 6.25%;
@@ -80,7 +98,58 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 @media screen and (max-width:767px){
+    .header{
+        height: 50px;
+        flex-wrap: wrap;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .logo{
+        width: 100%;
+    }   
+    .logo-a{
+        width: 48px;
+        height: 30px;
+        margin: 0 auto;
+    }
+    .menu{
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top:50px;
+        left:0;
+        z-index: 1;
+        /*display: none;*/
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    .menuList{
+        
+        flex-direction: column;
+    }
+    .menuList-list{
+        margin-left:0;
+        width: 100%;
+        border: 1px solid #fff;
+    }
+    .menuList-a{
+        display: inline-block;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+    }
+    .phoneMenu{
+        /*display: block;*/
+    }
+    .phoneMenu-label{
+        display: block;
+    }
+    #menu-check:checked ~ .header .menu{
+        height: 248px;
+    }
     
+
 }
 
 
@@ -108,6 +177,9 @@ h1,h2,h3,h4,h5,h6{
     .banner{
         background-image: url("../images/68.png"); 
     }
+    .bannerTitle{
+        margin-right: 4.5%;
+    }
     .bannerTitle h1{
         font-size: 48px;
      }
@@ -115,6 +187,26 @@ h1,h2,h3,h4,h5,h6{
         font-size: 20px;
     }
 }
+@media screen and (max-width:767px){
+    .banner{
+        height: 394px;
+    }
+    .bannerTitle{
+        margin-right: 3.2%;
+    }
+    .bannerTitle h1{
+        font-size: 32px;
+     }
+    .bannerTitle h2{
+        font-size: 16px;
+     }
+}
+
+
+
+
+
+
 
 .IntroductionList{
     justify-content: space-between;
@@ -140,6 +232,9 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     font-size: 24px;
 }
+.IntroductionList-p{
+    margin-bottom: 20px;
+}
 @media screen and (max-width:992px){
     
     .sectionTitle{
@@ -163,6 +258,20 @@ h1,h2,h3,h4,h5,h6{
         padding-right:15%;
     }
 }
+@media screen and (max-width:767px){
+    .sectionTitle{
+        font-size: 24px;
+        margin-bottom: 12px
+    }
+    .section-padding{
+        padding-top: 32px;
+    }
+    .IntroductionList-list{
+        width: 93.6%;
+        height: 289px;
+    }
+}
+
 
 .classicList-list{
     
@@ -271,6 +380,21 @@ h1,h2,h3,h4,h5,h6{
         flex-direction:row;
      }
 }
+@media screen and (max-width:767px){
+    .classicList-list{
+        width: 93.6%;
+    }
+    .classicList-img{
+        width: 100%;
+    }
+    .classicList-txt{
+        display: none;
+    }
+    .classicList-img-a{
+        display: block;
+    }
+
+}
 
 
 
@@ -296,7 +420,6 @@ h1,h2,h3,h4,h5,h6{
     width: 62%;
 }
 .imgbox2-img2{
-    
     margin-top: 1%;
     justify-content: space-between;
 }
@@ -321,17 +444,21 @@ h1,h2,h3,h4,h5,h6{
     top:18.5%;
     bottom:18.5%;
     left:12%;
+    align-items: center;
+    justify-content: space-around;
 }
 .more-link-a{
     font-size: 48px;
     display: block;
-    width: 100%;
+    
     height: 100%;
     padding: 10px;
     text-align: center;
     line-height: 100%;
-    justify-content: space-around;
     align-items: center;
+}
+.more-link-i{
+    width: 20%;
 }
 
 .joinNameList{
@@ -348,8 +475,10 @@ h1,h2,h3,h4,h5,h6{
 .joinNameList-list{
     width: 48.75%;
     height: 592px;
+    
     background-position: center center;
     background-size: cover;
+    position: relative;
 }
 .joinName-a{
     display: block;
@@ -385,12 +514,62 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
+@media screen and (max-width:767px){
+    .joinName-box{
+        width: 87%;
+    }
+    .imgbox{
+        width: 48%;
+        margin-right: 0.5%;
+    }
+    .imgbox2{
+        width: 51.5%;
+    }
+    .imgbox2-img2-more{
+        width: 60%;
+        top: 140%;
+        left:21%;
+    }
+    .more-link-a{
+        font-size: 32px;
+    }
+    .imgbox2-img2{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    .imgbox2-img2-big{
+        width: 100%;
+    }
+    .imgbox2-img2-small{
+        width: 19.5%;
+        height: 69%;
+        margin-top: 1%;
+    }
+    .joinNameList{
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    .joinNameList-list{
+        width: 100%;
+        height: 284px;
+    }
+    .joinName-a{
+        line-height: 284px;
+    }
+    .joinNameList-list:nth-child(2){
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:414px){
+    .more-link-a{
+        font-size: 20px;
+    }
+    .joinNameList{
+        width: 93.6%;
 
+    }
 
-
-
-
-
+}
 
 
 
@@ -430,10 +609,16 @@ h1,h2,h3,h4,h5,h6{
     }
     
 }
-
-
-
-
+@media screen and (max-width:767px){
+    .recommendationList-list{
+        width: 100%;
+    }
+}
+@media screen and (max-width:414px){
+    .recommendationList{
+        width: 93.6%;
+    }
+}
 .contact-p{
     margin-bottom: 20px;
 }
@@ -442,6 +627,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .inputbox-input{
     height: 50px;
+    border: 1px solid #000;
 }
 .inputbox-mb{
     margin-bottom: 16px;
@@ -475,7 +661,11 @@ h1,h2,h3,h4,h5,h6{
         width: 74%;
     }
 }
-
+@media screen and (max-width:767px){
+    .inputbox{
+        width: 93.6%;
+    }
+}
 
 .footer{
     padding-top: 30px;
@@ -484,12 +674,14 @@ h1,h2,h3,h4,h5,h6{
 }
 .footerMain{
     justify-content: space-between;
+   
 }
 .iconlink{
     align-items: center;
+    
 }
 .iconlink-list{
-    margin-left: 32px;
+    margin-left:32px;
 }
 .iconlink-a{
     display: block;
@@ -498,19 +690,22 @@ h1,h2,h3,h4,h5,h6{
     font-size: 36px;
 }
 .footer-menu{
+    
     justify-content: space-between;
     margin-bottom: 8px;
 }
 .footermenuList{
-    margin-left: 24px;
+    width: 60%;
+    margin-left: 2%;
+    justify-content: space-between;
     align-items: center;
     
 }
 .footermenuList-list{
     
-    margin-right: 24px;
+    
 }
-.menuList-a{
+.footermenuList-a{
     width: 24px;
     height: 24px;
 }
@@ -525,14 +720,14 @@ h1,h2,h3,h4,h5,h6{
     left:-59px;
 }
 .emailphoneList-list{
-    margin-left: 84px;
+    margin-left: 7%;
     margin-bottom: 16px;
     position: relative;
 }
 .copyright{
     border-top: 1px solid #fff;
     padding-top: 24px;
-    margin-left: 24px;
+    
     align-items: center;
     
 }
@@ -552,10 +747,14 @@ h1,h2,h3,h4,h5,h6{
         width: 87.5%;
     }
     .footermenuList{
-        width: 75%;
+        width: 72%;
     }
     .iconlink{
-        width: 25%;
+        width: 20%;
+        justify-content: space-between;
+    }
+    .iconlink-list{
+        margin-left:0;
     }
     
     .footermenuList{
@@ -575,5 +774,58 @@ h1,h2,h3,h4,h5,h6{
     }
     .copyright-h2{
         display:none;
+    }
+}
+@media screen and (max-width:767px){
+    .footer-container{
+        width: 93.6%;
+    }
+    .footerMain .footermenuList{
+        display: none;
+    }
+    .footer-menu{
+       width: 40%;
+    }
+    .footerMain{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .footermenuList-list{
+        margin-left: 30%;
+    
+    }
+    .iconlink{
+        align-items: flex-start;
+    }
+    .iconlink-list{
+         margin-left: 73%;
+    }
+    .iconlink-a{
+        width: 24px;
+    }
+    .emailphoneList-list{
+        font-size: 16px;
+        margin-left: 30%;
+    }
+    .copyright{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .copyrightList{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .copyright-list{
+        margin-left: 0;
+    }
+    .copyright{
+        position: relative;
+    }
+    .copyright-h2{
+        display: block;
+        margin-right: 0;
+        position: absolute;
+        right:0;
+        bottom:0;
     }
 }
